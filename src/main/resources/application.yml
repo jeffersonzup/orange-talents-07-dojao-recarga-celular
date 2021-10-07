@@ -1,0 +1,23 @@
+micronaut:
+  application:
+    name: recargaCelular
+  server:
+    port: 8083
+
+datasources:
+  default:
+    url: ${DB_URL:`jdbc:postgresql://localhost:5433/recargacelular`}
+    driverClassName: org.postgresql.Driver
+    username: ${DB_USER:postgres}
+    password: ${DB_PASSWORD:postgres}
+    dialect: POSTGRES
+
+jpa:
+  default:
+    defer-datasource-initialization: true
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+        show_sql: true
+
